@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Masakan;
 use Illuminate\Http\Request;
 
 class MasakanController extends Controller
@@ -13,7 +14,8 @@ class MasakanController extends Controller
      */
     public function index()
     {
-        return view('masakan.index');
+        $masakans = Masakan::all(); 
+        return view('masakan.index', compact('masakans'));
     }
 
     /**
