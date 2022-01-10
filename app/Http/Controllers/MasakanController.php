@@ -25,7 +25,8 @@ class MasakanController extends Controller
      */
     public function create()
     {
-        //
+        $masakans = Masakan::all(); 
+        return view('masakan.create', compact('masakans'));
     }
 
     /**
@@ -36,7 +37,8 @@ class MasakanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Masakan::create($request->all());
+        return redirect('masakan');
     }
 
     /**
@@ -45,7 +47,7 @@ class MasakanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Masakan $masakan)
     {
         //
     }
@@ -56,9 +58,10 @@ class MasakanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Masakan $masakan)
     {
-        //
+        return view('masakan.edit',
+        compact('masakan'));
     }
 
     /**
@@ -68,9 +71,10 @@ class MasakanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Masakan $masakan)
     {
-        //
+        $masakan->update($request->all());
+        return redirect('masakan');
     }
 
     /**
@@ -79,8 +83,9 @@ class MasakanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Masakan $masakan)
     {
-        //
+        $masakan->delete();
+        return redirect('masakan');
     }
 }

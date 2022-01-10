@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Masakan extends Model
 {
-    protected $table = 'masakans';
+    protected $fillable = ['name', 'type', 'description', 'price', 'photo',];
 }
