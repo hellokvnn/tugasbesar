@@ -15,7 +15,7 @@
 <div class="col-md-8 offset-md-2">
     <center><h3>Tambah Masakan</h3></center>
 
-    <form method="POST" action="{{route('masakan.store')}}">
+    <form method="POST" action="{{route('masakan.store')}}" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="name">Nama</label>

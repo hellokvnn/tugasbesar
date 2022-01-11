@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Masakan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MasakanController extends Controller
 {
@@ -38,6 +39,15 @@ class MasakanController extends Controller
     public function store(Request $request)
     {
         Masakan::create($request->all());
+        if($request->hasFile('photo')){
+            $resorce = $request->file('photo');
+            $name_file = $resorce->getClientOriginalName();
+            $resorce->move(\base_path() ."/public/images", $name_file);
+            $save = DB::table('masakans')->insert(['photo' => $name_file]);
+            echo "Gambar berhasil di upload";
+        }else{
+            echo "Gagal upload gambar";
+        }
         return redirect('masakan');
     }
 
