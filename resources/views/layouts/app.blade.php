@@ -36,10 +36,10 @@
                     @else
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('masakan.index') }}">{{ __('Index') }}</a>
+                            <a class="nav-link" href="{{ route('masakan.index') }}">{{ __('Data Masakan') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('masakan.create') }}">{{ __('Tambah') }}</a>
+                            <a class="nav-link" href="{{ route('masakan.create') }}">{{ __('Tambah Data') }}</a>
                         </li>
                     </ul>
                     @endguest
