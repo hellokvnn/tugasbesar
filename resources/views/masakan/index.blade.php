@@ -15,7 +15,7 @@
 <center>
 <h3>Data Masakan</h3>
 <br>
-    <a href="{{route('masakan.create')}}" class="btn btn-success">Tambah Data</a>
+    <a href="{{route('masakan.create')}}" class="btn btn-success" >Tambah Data</a>
 </center>
 <br>
     <table class="table table-bordered">
@@ -36,7 +36,7 @@
                 <tr>
                     <td> {{$loop->iteration}} </td>
                     <td> {{$masakan->name}} </td>
-                    <td> {{$masakan->photo}} </td>
+                    <td> <img src="{{asset('storage/' . $masakan->photo)}}"> </td>
                     <td> {{$masakan->type == "ma" ? "Makanan" : "Minuman" }} </td>
                     <td> {{$masakan->description}} </td>
                     <td> {{$masakan->price}} </td>

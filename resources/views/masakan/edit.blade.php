@@ -15,7 +15,7 @@
     <br>
     <center><h3>Edit Mahasiswa</h3></center>
 
-    <form method="POST" action="{{route('masakan.update', $masakan->id)}}">
+    <form method="POST" action="{{route('masakan.update', $masakan->id)}}" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="form-group">

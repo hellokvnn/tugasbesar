@@ -39,15 +39,8 @@ class MasakanController extends Controller
     public function store(Request $request)
     {
         Masakan::create($request->all());
-        if($request->hasFile('photo')){
-            $resorce = $request->file('photo');
-            $name_file = $resorce->getClientOriginalName();
-            $resorce->move(\base_path() ."/public/images", $name_file);
-            $save = DB::table('masakans')->insert(['photo' => $name_file]);
-            echo "Gambar berhasil di upload";
-        }else{
-            echo "Gagal upload gambar";
-        }
+        $file_name = $request->photo->getClientOriginalName();
+        $request->photo->store('images', $file_name);
         return redirect('masakan');
     }
 
