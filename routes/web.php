@@ -19,4 +19,7 @@ Route::get('/', function () {
 
 Route::resource('masakan', 'MasakanController');
 
+route::Auth();
+
+Route::get('/home', 'HomeController@index')->name('home');
 

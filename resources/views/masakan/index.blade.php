@@ -36,7 +36,7 @@
                 <tr>
                     <td> {{$loop->iteration}} </td>
                     <td> {{$masakan->name}} </td>
-                    <td> <img src="{{asset('storage/' . $masakan->photo)}}"> </td>
+                    <td> {{asset('storage/' . $masakan->photo)}} </td>
                     <td> {{$masakan->type == "ma" ? "Makanan" : "Minuman" }} </td>
                     <td> {{$masakan->description}} </td>
                     <td> {{$masakan->price}} </td>
