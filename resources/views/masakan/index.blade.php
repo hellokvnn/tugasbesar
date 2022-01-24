@@ -15,7 +15,7 @@
 <center>
 <h3>Data Masakan</h3>
 <br>
-    <a href="{{route('masakan.create')}}" class="btn btn-success" >Tambah Data</a>
+    <a href="{{route('masakan.create')}}" enctype="multipart/form-data" class="btn btn-success" >Tambah Data</a>
 </center>
 <br>
     <table class="table table-bordered">
@@ -33,13 +33,13 @@
         <tbody>
         </tbody>
         @foreach ($masakans as $masakan)
-                <tr>
+                <tr align="center">
                     <td> {{$loop->iteration}} </td>
                     <td> {{$masakan->name}} </td>
-                    <td> {{asset('storage/' . $masakan->photo)}} </td>
+                    <td> <img width="275px" height="375px" style="object-fit: cover " src="{{'storage/images/' . $masakan->photo}}"> </td>
                     <td> {{$masakan->type == "ma" ? "Makanan" : "Minuman" }} </td>
                     <td> {{$masakan->description}} </td>
-                    <td> {{$masakan->price}} </td>
+                    <td> Rp. {{$masakan->price}} </td>
                     <td align="center"> 
                         <a href="{{route('masakan.edit', $masakan->id)}}" class="btn btn-primary">Edit</a>
                     </td>

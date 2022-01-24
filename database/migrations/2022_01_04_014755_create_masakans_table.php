@@ -16,7 +16,7 @@ class CreateMasakansTable extends Migration
         Schema::create('masakans', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 50);
-            $table->string('photo', 50);
+            $table->string('photo')->nullable();
             $table->string('type', 10);
             $table->string('description', 100);
             $table->integer('price'); 

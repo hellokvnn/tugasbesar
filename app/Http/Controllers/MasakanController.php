@@ -38,10 +38,25 @@ class MasakanController extends Controller
      */
     public function store(Request $request)
     {
-        Masakan::create($request->all());
         $file_name = $request->photo->getClientOriginalName();
-        $request->photo->store('images', $file_name);
-        return redirect('masakan');
+        $request->photo->storeAs('images', $file_name);
+
+        $this->validate($request,[
+            'name' => 'required',
+            'photo' => 'required|mimes:jpg,jpeg,png',
+            'type' => 'required',
+            'description' => 'required|max:300',
+            'price' => 'required|numeric'
+        ]);
+
+        Masakan::create([
+            'name' => $request->name,
+            'photo' => $request->photo,
+            'type' => $request->type,
+            'description' => $request->description,
+            'price' => $request->price
+        ]);
+        return redirect('masakan', ['masakan' => $request]);
     }
 
     /**

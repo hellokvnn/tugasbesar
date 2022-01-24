@@ -19,24 +19,24 @@
         @csrf
         <div class="form-group">
             <label for="name">Nama</label>
-            <input type="text" class="form-control" name="name">
+            <input type="text" class="form-control" name="name" required>
         </div>
         <div class="form-group">
             <label for="type">Jenis</label> <br>
-            <input type="radio" class="form-control-inline" name="type" value="ma">Makanan
+            <input type="radio" class="form-control-inline" name="type" value="ma" checked>Makanan
             <input type="radio" class="form-control-inline" name="type" value="mi">Minuman
         </div>
         <div class="form-group">
             <label for="description">Deskripsi</label>
-            <input type="textbox" class="form-control" name="description">
+            <input type="textbox" class="form-control" name="description" required>
         </div>
         <div class="form-group">
             <label for="price">Harga</label>
-            <input type="number" class="form-control" name="price">
+            <input type="number" class="form-control" name="price" required>
         </div>
         <div class="form-group">
-            <label for="photo">Gambar</label> <br>
-            <input type="file" name="photo">
+            <label for="photo">Gambar</label>
+            <input type="file" class="form-control" name="photo" required>
         </div>
 
         <center><button type="submit" class="btn btn-primary">Simpan</button></center>

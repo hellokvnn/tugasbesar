@@ -37,7 +37,7 @@
         </div>
         <div class="form-group">
             <label for="photo">Gambar</label> <br>
-            <input type="file" name="photo">
+            <input type="file" class="form-control" name="photo" value="{{asset('storage/images/' . $masakan->photo)}}">
         </div>
         <center><button type="submit" class="btn btn-success">Simpan</button></center>
     </form>
